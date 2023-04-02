@@ -1,0 +1,15 @@
+{
+  "name": "@yashchaturmutha/github-pckg-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/@yashchaturmutha"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

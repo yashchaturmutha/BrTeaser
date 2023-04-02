@@ -1,0 +1,203 @@
+{
+    "config": {
+      "backgroundImg": "https://runday-chatbot.s3.us-west-2.amazonaws.com/recruitment/interviewPannel.jpg",
+      "name": "Hire",
+      "icon": "https://runday-chatbot.s3.us-west-2.amazonaws.com/recruitment/hire_black_logo.svg",
+      "colors": {
+        "primary": "#191819"
+      }
+    },
+    "1": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Hello! Happy Wednesday"
+        },
+        {
+          "type": "text",
+          "value": "What's your name?"
+        }
+      ],
+      "responseOptions": {
+        "type": "text"
+      },
+      "validation": {
+        "variable": "name",
+        "type": "text",
+        "min": {
+          "value": 2
+        }
+      }
+    },
+    "2": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Nice to meet you {{name}}! Let's schedule your interview."
+        },
+        {
+          "type": "text",
+          "value": "Please select your preferred date and time."
+        },
+        {
+          "type": "appointment",
+          "value": {
+            "2022-09-23": [
+              "2022-09-23T12:00:00.000+05:30",
+              "2022-09-23T13:00:00.000+05:30",
+              "2022-09-23T14:00:00.000+05:30",
+              "2022-09-23T15:00:00.000+05:30"
+            ]
+          }
+        }
+      ],
+      "responseOptions": {
+        "type": "appointment",
+        "options": {
+          "2022-09-23": [
+            "2022-09-23T12:00:00.000+05:30",
+            "2022-09-23T13:00:00.000+05:30",
+            "2022-09-23T14:00:00.000+05:30",
+            "2022-09-23T15:00:00.000+05:30"
+          ]
+        }
+      },
+      "validation": {
+        "variable": "appointment"
+      }
+    },
+    "3": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Thanks {{name}}! Please provide your phone number so we can easily connect with you."
+        }
+      ],
+      "responseOptions": {
+        "type": "phone"
+      },
+      "validation": {
+        "variable": "phone",
+        "type": "regex",
+        "pattern": "^[0-9\\(\\)\\.\\,\\+\\-\\s]+$",
+        "message": "Please enter a valid phone number. Eg (888) 888-8888"
+      }
+    },
+    "4": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Thanks!"
+        },
+        {
+          "type": "text",
+          "value": "And your email ID please?"
+        }
+      ],
+      "responseOptions": {
+        "type": "text"
+      },
+      "validation": {
+        "variable": "email",
+        "type": "email"
+      }
+    },
+    "5": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Perfect! Here are your interview details:"
+        },
+        {
+          "type": "confirmation",
+          "value": {
+            "details": "Interview with Jack Pearson (Hiring Manager) and Jill Wagner (Recruiter)",
+            "meeting_time": "{{appointment}}",
+            "duration": "1 Hour",
+            "location": {
+              "type": 0,
+              "value": "https://zoom.us/j/8683567890?pwd=MlJxZUE3SGU1S3dJNkhIZnpmU2UyQT09#success",
+              "href": "https://zoom.us/j/8683567890?pwd=MlJxZUE3SGU1S3dJNkhIZnpmU2UyQT09#success"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": "Now that's done we have a few questions for you."
+        },
+        {
+          "type": "text",
+          "value": "How are you a great candidate for this opportunity?"
+        }
+      ],
+      "responseOptions": {
+        "type": "text"
+      },
+      "validation": {
+        "variable": "about",
+        "type": "text",
+        "min": {
+          "value": 10,
+          "message": "Please provide more details. Your response was too short."
+        }
+      }
+    },
+    "6": {
+      "message": [
+        {
+          "type": "text",
+          "value": "What was your last or current annual salary?"
+        }
+      ],
+      "responseOptions": {
+        "type": "text"
+      },
+      "validation": {
+        "variable": "last-salary",
+        "type": "regex",
+        "pattern": "^[0-9\\.\\,\\$\\s]+$",
+        "message": "Please enter your yearly salary, e.g., $50,000"
+      }
+    },
+    "7": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Noted! Please attach your resume."
+        },
+        {
+          "type": "file",
+          "accept": ["application/pdf"],
+          "maxSize": "10485760"
+        }
+      ],
+      "responseOptions": {
+        "type": "file"
+      }
+    },
+    "8": {
+      "message": [
+        {
+          "type": "text",
+          "value": "Thank you so much!"
+        },
+        {
+          "type": "text",
+          "value": "Good luck for your interview"
+        },
+        {
+          "type": "confirmation",
+          "value": {
+            "details": "Interview with Jack Pearson (Hiring Manager) and Jill Wagner (Recruiter)",
+            "meeting_time": "{{appointment}}",
+            "duration": "1 Hour",
+            "location": {
+              "type": 0,
+              "value": "https://zoom.us/j/8683567890?pwd=MlJxZUE3SGU1S3dJNkhIZnpmU2UyQT09#success",
+              "href": "https://zoom.us/j/8683567890?pwd=MlJxZUE3SGU1S3dJNkhIZnpmU2UyQT09#success"
+            }
+          }
+        }
+      ]
+    }
+  }

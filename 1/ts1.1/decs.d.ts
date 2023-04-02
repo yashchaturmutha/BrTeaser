@@ -1,0 +1,1 @@
+declare module "@yash22/ts01"
